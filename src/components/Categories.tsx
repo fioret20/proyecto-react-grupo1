@@ -6,7 +6,7 @@ interface CategoriesProps {
 }
 
 const Categories: React.FC<CategoriesProps> = ({ currentCategory, onCategoryChange }) => {
-  const categories = ['All', 'Motivation', 'Success', 'Life', 'Wisdom'];
+  const categories = ['Todas', 'Estudio', 'Trabajo', 'Personal', 'Productividad'];
 
   return (
     <div>
