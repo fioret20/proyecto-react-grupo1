@@ -1,11 +1,23 @@
-import Home from './pages/Home';
+import { useState } from 'react'
 import './App.css'
+import QuoteDisplay from './components/Quote'
+import Categories from './components/Categories'
 
 function App() {
 
   return (
     <>
-      <Home />
+      <Categories currentCategory={''} onCategoryChange={function (category: string): void {
+        throw new Error('Function not implemented.')
+      }}></Categories>
+
+      <QuoteDisplay quote={''} author={''} onAddToFavorites={function (): void {
+        throw new Error('Function not implemented.')
+      }} onNewQuote={function (): void {
+        throw new Error('Function not implemented.')
+      }}>
+
+      </QuoteDisplay>
     </>
   )
 }
