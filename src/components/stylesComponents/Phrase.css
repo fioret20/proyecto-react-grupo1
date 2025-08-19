@@ -1,0 +1,49 @@
+.phrase-container{
+    background-color: #384152;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(224, 224, 224, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.phrase-container:hover {
+    background-color: rgb(61, 61, 61);
+}
+
+.phrase{
+    width: 90%;
+    margin: auto;
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+    color: #dee5f8;
+}
+
+.author{
+    color: #a1a9c0;
+}
+
+.phrase-controls{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-phrase{
+    display: flex;
+    margin: 5px;
+    background-color: #3585f6;
+    color: #ffffff;
+    align-items: center;
+}
+
+.icon{
+    margin-right: 5px;
+}
