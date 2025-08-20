@@ -23,10 +23,11 @@ export default function FavoriteList({ favorites, marcFavorite }: FavoriteListPr
           {favorites.length === 0 ? <p>No hay favoritas todavía.</p> : (
             favorites.map(f => (
               <div className="notification favorite-item" key={f.id}>
-                <strong>Frase:</strong> {f.text} <br />
-                <strong>Autor:</strong> {f.author} <br />
-                <strong>Categoría:</strong> {f.category} <br />
-                <button onClick={() => marcFavorite(f)}>❌</button>
+                <button onClick={() => marcFavorite(f)}>X</button>
+                <br />
+                <div className="textFavorite">"{f.text}"</div>
+                <div className="authorFavorite"> — {f.author}</div>
+                <div className="categoryFavorite">{f.category}</div>
               </div>
             ))
           )}

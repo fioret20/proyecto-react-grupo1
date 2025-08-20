@@ -1,5 +1,3 @@
-
-
 /* Icono de notificación */
 .notif-icon {
     cursor: pointer;
@@ -39,38 +37,68 @@
     right: 20px;
     width: 300px;
     max-height: 400px;
-    background-color: white;
+    background-color: #2d3748;
     box-shadow: 0 2px 12px rgb(0 0 0 / 0.2);
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 12px;
     overflow-y: auto;
     z-index: 99;
+    color:#ffffff;
 }
 
 .favorite-item {
-    border: 1px solid #ccc;
     margin-bottom: 8px;
     padding: 10px;
     border-radius: 6px;
-    background-color: #fafafa;
-}
-
-.favorite-item:hover {
-    background-color: #f0f0f0;
-}
+    background-color:#4a5568;;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    color: #dee5f8;
+    font-style: italic;
+    }
 
 .favorite-item button {
-    margin-top: 8px;
+    margin-top: 2px;
     padding: 6px 12px;
     cursor: pointer;
-    background-color: #3b82f6;
-    color: white;
+    background-color: #4299e1;;
     border: none;
-    border-radius: 5px;
     font-size: 14px;
     transition: background-color 0.3s ease;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-left:240px;
+    margin-bottom:10px;
 }
 
 .favorite-item button:hover {
-    background-color: #2563eb;
+    background-color: #3182ce;
+}
+
+.textFavorite {
+    font-size: 0.99rem;
+}
+
+.authorFavorite {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-bottom: 8px;
+}
+
+.categoryFavorite {
+    border-radius: 3rem;
+    background-color: #6797be;
+    width: 5rem;
+    font-size: 15px;
+    margin-bottom: 3px;
+    margin-top:1px;
+}
+
+@media (min-width: 640px) {
+.notif-panel {
+}
+
+.notif-icon {
+}
 }
