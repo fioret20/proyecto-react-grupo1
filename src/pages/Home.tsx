@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-import PhraseJSON from "../../public/phrase.json";
+import PhraseJSON from "../../public/phrase.json";   
+import FavoriteList from '../components/FavoriteList';
+import type { Phrase as PhraseType } from "../types/Phrase";
 import LoadingPhrase from '../components/LoadingPhrase';
 import Title from '../components/Title';
 import Categories from '../components/Categories';
-
 
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,7 +44,25 @@ const Home = () => {
 
     const currentPhrase = filteredQuotes[currentIndex];
 
-    console.log(currentPhrase.category)
+
+    // Estado de favoritos
+    const [favorites, setFavorites] = useState<PhraseType[]>(() => {
+        const stored = localStorage.getItem("favorites");
+        return stored ? JSON.parse(stored) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    }, [favorites]);
+
+    const toggleFavorite = (phrase: PhraseType) => {
+        if (favorites.find(f => f.id === phrase.id)) {
+            setFavorites(prev => prev.filter(f => f.id !== phrase.id));
+        } else {
+            setFavorites(prev => [...prev, phrase]);
+        }
+    };
+      
     return (
         <>
             <Title />
@@ -52,6 +71,8 @@ const Home = () => {
                 onCategoryChange={handleCategoryChange}
             />
 
+
+            
             {loading || !currentPhrase ? (
                 <LoadingPhrase />
             ) : (
@@ -60,8 +81,14 @@ const Home = () => {
                     author={currentPhrase.author}
                     id={currentPhrase.id}
                     onNextPhrase={handleNextPhrase}
-                />
-            )}
+
+                    onFavoritePhrase={() => toggleFavorite(currentPhrase)} // agregamos favoritos
+                /> 
+
+            )} 
+            <FavoriteList favorites={favorites} marcFavorite={toggleFavorite} />
+
+
         </>
     );
 }
