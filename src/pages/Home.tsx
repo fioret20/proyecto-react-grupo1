@@ -21,16 +21,29 @@ const Home = () => {
             });
     }, []);
 
+    const [currentCategory, setCurrentCategory] = useState<string>('Todas');
+
+    const quotes = PhraseJSON;
+
+    const filteredQuotes = currentCategory === 'Todas'
+        ? quotes
+        : quotes.filter((quote: { category: string }) => quote.category === currentCategory);
+
+    useEffect(() => {
+        setCurrentIndex(0)
+    }, [currentCategory])
+
     const handleNextPhrase = () => {
         setLoading(true);
         setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredQuotes.length);
             setLoading(false);
         }, 500); // Simula el tiempo de consulta
     };
 
-    const currentPhrase = PhraseJSON[currentIndex];
+    const currentPhrase = filteredQuotes[currentIndex];
 
+    console.log(currentPhrase.category)
     return (
         <>
             <Title />
