@@ -1,4 +1,4 @@
-.phrase-container{
+.phrase-container {
     width: 40rem;
     overflow: hidden;
     background-color: #384152;
@@ -15,7 +15,7 @@
     background-color: rgb(61, 61, 61);
 }
 
-.phrase{
+.phrase {
     width: 90%;
     margin: auto;
     font-size: 23px;
@@ -24,11 +24,11 @@
     color: #dee5f8;
 }
 
-.author{
+.author {
     color: #a1a9c0;
 }
 
-.phrase-controls{
+.phrase-controls {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -38,7 +38,7 @@
     flex-wrap: wrap;
 }
 
-.button-phrase{
+.button-phrase {
     display: flex;
     margin: 5px;
     background-color: #3585f6;
@@ -46,7 +46,7 @@
     align-items: center;
 }
 
-.icon{
+.icon {
     margin-right: 5px;
 }
 
@@ -55,20 +55,24 @@
         width: 90%;
         padding: 15px;
     }
+
     .phrase {
         font-size: 20px;
     }
+
     .author {
         font-size: 14px;
     }
+
     .phrase-controls {
         width: 100%;
         flex-direction: column;
         align-items: center;
     }
+
     .button-phrase {
         width: 100%;
         justify-content: center;
     }
-    
+
 }

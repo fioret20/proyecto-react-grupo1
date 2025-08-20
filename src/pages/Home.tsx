@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-import PhraseJSON from "../../public/phrase.json";   
+import PhraseJSON from "../../public/phrase.json";
 import FavoriteList from '../components/FavoriteList';
 import type { Phrase as PhraseType } from "../types/Phrase";
 import LoadingPhrase from '../components/LoadingPhrase';
 import Title from '../components/Title';
 import Categories from '../components/Categories';
+import '../../src/components/stylesComponents/Home.css'
 
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,33 +63,33 @@ const Home = () => {
             setFavorites(prev => [...prev, phrase]);
         }
     };
-      
+
     return (
         <>
-            <Title />
-            <Categories
-                currentCategory={currentCategory}
-                onCategoryChange={handleCategoryChange}
-            />
+            <div className='app-container'>
+                <Title />
+                <Categories
+                    currentCategory={currentCategory}
+                    onCategoryChange={handleCategoryChange}
+                />
 
 
-            
-            {loading || !currentPhrase ? (
-                <LoadingPhrase />
-            ) : (
-                <Phrase
-                    phrase={currentPhrase.text}
-                    author={currentPhrase.author}
-                    id={currentPhrase.id}
-                    onNextPhrase={handleNextPhrase}
 
-                    onFavoritePhrase={() => toggleFavorite(currentPhrase)} // agregamos favoritos
-                /> 
+                {loading || !currentPhrase ? (
+                    <LoadingPhrase />
+                ) : (
+                    <Phrase
+                        phrase={currentPhrase.text}
+                        author={currentPhrase.author}
+                        id={currentPhrase.id}
+                        onNextPhrase={handleNextPhrase}
 
-            )} 
-            <FavoriteList favorites={favorites} marcFavorite={toggleFavorite} />
+                        onFavoritePhrase={() => toggleFavorite(currentPhrase)} // agregamos favoritos
+                    />
 
-
+                )}
+                <FavoriteList favorites={favorites} marcFavorite={toggleFavorite} />
+            </div>
         </>
     );
 }

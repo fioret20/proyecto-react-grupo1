@@ -9,11 +9,11 @@ const Categories: React.FC<CategoriesProps> = ({ currentCategory, onCategoryChan
     const categories = ['Todas', 'Estudio', 'Trabajo', 'Personal', 'Productividad'];
 
     return (
-        <div>
+        <div className='category-tabs'>
             {categories.map((category) => (
                 <button
                     key={category}
-                    className={`mx-2 py-2 px-4 rounded ${currentCategory === category ? 'bg-brown-600 text-white' : 'bg-gray-200'}`}
+                    className="category-button"
                     onClick={() => onCategoryChange(category)}
                 >
                     {category}

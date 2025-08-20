@@ -1,0 +1,143 @@
+/* General styles for the body and main container */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a202c;
+    color: #e2e8f0;
+    transition: background-color 0.3s ease;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 640px;
+    background-color: #2d3748;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Styles for the title and subtitle */
+.title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #63b3ed;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: #a0aec0;
+    margin-top: 0;
+}
+
+/* Styles for the category tabs */
+.category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.category-button {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.category-button:hover {
+    transform: scale(1.05);
+}
+
+.category-button.active {
+    background-color: #3182ce;
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.category-button:not(.active) {
+    background-color: #4a5568;
+    color: #cbd5e0;
+
+    .category-button:not(.active):hover {
+        background-color: #4a5568;
+    }
+}
+
+/* Styles for the habit content area */
+.content-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    padding: 1.5rem;
+    background-color: #4a5568;
+    border-radius: 0.75rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.habit-quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #e2e8f0;
+    margin: auto;
+}
+
+/* Styles for the navigation buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.nav-button {
+    padding: 0.75rem 1rem;
+    background-color: #4299e1;
+    color: #fff;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #3182ce;
+    transform: scale(1.05);
+}
+
+/* Media queries */
+@media (min-width: 640px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    .category-button {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .content-area {
+        min-height: 80%;
+    }
+
+    .habit-quote {
+        font-size: 1.5rem;
+    }
+}
