@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "text": "Antes de empezar, organiza tu espacio de estudio. Un ambiente limpio ayuda a una mente clara.",
+    "author": "Abril Luna Gimenez",
+    "category": "Estudio"
+  },
+  {
+    "id": 2,
+    "text": "Aprende algo nuevo cada día, aunque sea solo un poco. La consistencia es clave.",
+    "author": "Esteban Karaputny",
+    "category": "Estudio"
+  },
+  {
+    "id": 3,
+    "text": "Usa la técnica Pomodoro: 25 minutos de estudio concentrado, 5 de descanso. Tu cerebro te lo agradecerá.",
+    "author": "Fiorella Terranova",
+    "category": "Estudio"
+  },
+  {
+    "id": 4,
+    "text": "Al final de cada sesión, repasa lo que has aprendido. La repetición es la madre de la memoria.",
+    "author": "Franco Torrico",
+    "category": "Estudio"
+  },
+  {
+    "id": 5,
+    "text": "Enseña lo que sabes. Explicar un concepto a otra persona es la mejor forma de consolidarlo.",
+    "author": "Agostina Abril de Yurka",
+    "category": "Estudio"
+  },
+  {
+    "id": 6,
+    "text": "Haz una lista de 3 tareas prioritarias cada mañana. Enfócate en lo más importante primero.",
+    "author": "Abril Luna Gimenez",
+    "category": "Trabajo"
+  },
+  {
+    "id": 7,
+    "text": "Programa momentos para revisar el correo. Evita revisarlo cada vez que te llega una notificación.",
+    "author": "Esteban Karaputny",
+    "category": "Trabajo"
+  },
+  {
+    "id": 8,
+    "text": "Tómate descansos breves para estirarte y moverte. Evita el sedentarismo.",
+    "author": "Franco Torrico",
+    "category": "Trabajo"
+  },
+  {
+    "id": 9,
+    "text": "Dedica los primeros 15 minutos del día a planificar. Un buen plan es la mitad del trabajo hecho.",
+    "author": "Fiorella Terranova",
+    "category": "Trabajo"
+  },
+  {
+    "id": 10,
+    "text": "Aprende a decir 'no' a las distracciones. Protege tu tiempo para el trabajo profundo.",
+    "author": "Agostina Abril de Yurka",
+    "category": "Trabajo"
+  },
+  {
+    "id": 11,
+    "text": "Medita por 5 minutos al despertar. Te ayudará a empezar el día con calma.",
+    "author": "Abril Luna Gimenez",
+    "category": "Personal"
+  },
+  {
+    "id": 12,
+    "text": "Dedica tiempo a un hobby. El ocio productivo es tan importante como el trabajo.",
+    "author": "Esteban Karaputny",
+    "category": "Personal"
+  },
+  {
+    "id": 13,
+    "text": "Lleva un diario de gratitud. Anota tres cosas por las que estás agradecido cada noche.",
+    "author": "Franco Torrico",
+    "category": "Personal"
+  },
+  {
+    "id": 14,
+    "text": "Mantén una rutina de sueño. Acostarte y levantarte a la misma hora mejora tu energía.",
+    "author": "Fiorella Terranova",
+    "category": "Personal"
+  },
+  {
+    "id": 15,
+    "text": "Da un pequeño paseo todos los días. El aire fresco y el movimiento mejoran el estado de ánimo.",
+    "author": "Agostina Abril de Yurka",
+    "category": "Personal"
+  },
+  {
+    "id": 16,
+    "text": "Sigue la regla de los dos minutos: si una tarea toma menos de dos minutos, hazla de inmediato.",
+    "author": "Abril Luna Gimenez",
+    "category": "Productividad"
+  },
+  {
+    "id": 17,
+    "text": "Divide las tareas grandes en pasos pequeños. Así se sienten menos abrumadoras.",
+    "author": "Esteban Karaputny",
+    "category": "Productividad"
+  },
+  {
+    "id": 18,
+    "text": "Revisa tus objetivos semanales cada domingo. Esto te ayudará a mantenerte enfocado.",
+    "author": "Franco Torrico",
+    "category": "Productividad"
+  },
+  {
+    "id": 19,
+    "text": "Minimiza las distracciones digitales. Silencia las notificaciones y cierra las pestañas innecesarias.",
+    "author": "Fiorella Terranova",
+    "category": "Productividad"
+  },
+  {
+    "id": 20,
+    "text": "Bloquea tiempo en tu calendario para el trabajo importante. Trátalo como una cita inamovible.",
+    "author": "Agostina Abril de Yurka",
+    "category": "Productividad"
+  }
+]
