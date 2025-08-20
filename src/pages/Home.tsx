@@ -2,9 +2,7 @@ import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
 import type { Phrase as PhraseType } from "../types/Phrase";
 import FavoriteList from '../components/FavoriteList';
-interface HomeProps {
-    toggleFavorite: (phrase: PhraseType) => void;
-}
+
 const objects = [
     {
         id: 1,
