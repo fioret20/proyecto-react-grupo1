@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-import PhraseJSON from "../../public/phrase.json";   
+import PhraseJSON from "../../public/phrase.json"; 
+import LoadingPhrase from '../components/LoadingPhrase';  
 
 
 const Home = () => {   
@@ -8,7 +9,6 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
     const [phrases, setPhrases] = useState<any[]>([]);
 
-    // Cargar frases al iniciar
     useEffect(() => {
         setLoading(true);
         fetch('/phrase.json')
@@ -21,11 +21,10 @@ const Home = () => {
 
     const handleNextPhrase = () => {
         setLoading(true);
-        // Simula consulta, pero aquí solo cambia el índice
         setTimeout(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
             setLoading(false);
-        }, 800); // Simula el tiempo de consulta
+        }, 500); // Simula el tiempo de consulta
     };
 
     const currentPhrase = PhraseJSON[currentIndex];
@@ -38,9 +37,7 @@ const Home = () => {
             </div>
 
             {loading || !currentPhrase ? (
-                <div className="loading-container">
-                    <p>Cargando...</p>
-                </div>
+                <LoadingPhrase />
             ) : (
                 <Phrase 
                     phrase={currentPhrase.text} 
