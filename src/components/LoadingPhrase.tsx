@@ -1,14 +1,15 @@
+import './stylesComponents/LoadingPhrase.css';
+
+
 
 const LoadingPhrase = () =>{
     return (
         <>  
-            <div className="phrase-container">
-                <p className='phrase'></p>
-                <p className='author'></p>
-                <div className="phrase-controls">
-                    <button className="button-phrase"  onClick={onNextPhrase}><FaRotate className='icon' /> Nueva Frase</button>
-                    <button className="button-phrase"><CiHeart  className='icon'/> Añadir a favoritos</button>
-                </div>  
+
+            <div className="card">
+                <div className="card__skeleton card__title"></div>
+                    <div className="card__skeleton card__description">         
+                    </div>
             </div>
         </>
     );

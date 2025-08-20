@@ -14,7 +14,7 @@ type PhraseProps = {
 
 const Phrase: React.FC<PhraseProps> = ({ phrase, author, onNextPhrase , onFavoritePhrase }: { phrase: string, author: string, onNextPhrase: () => void , onFavoritePhrase: () => void }) => {
     return (
-        <>  
+        <>
             <div className="phrase-container">
                 <p className='phrase'>{phrase}</p>
                 <p className='author'>{author}</p>
