@@ -1,24 +1,37 @@
+// FavoriteList.tsx
+import { useState } from "react";
 import type { Phrase } from "../types/Phrase";
+import './stylesComponents/FavoriteList.css';
 
-interface FavoriteListProps  {
+interface FavoriteListProps {
   favorites: Phrase[];
   marcFavorite: (phrase: Phrase) => void;
-
 }
 
 export default function FavoriteList({ favorites, marcFavorite }: FavoriteListProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <aside style={{ width: "250px", padding: "1rem", background: "#f4f4f4", borderLeft: "2px solid #ddd", position: "fixed", right: 0, top: 0, height: "100vh", overflowY: "auto" }}>
-      <h2>⭐ Favoritos</h2>
-      {favorites.length === 0 ? <p>No hay favoritas todavía.</p> : (
-        <ul>
-          {favorites.map(f => (
-            <li key={f.id}>
-              {f.phrase} <button onClick={() => marcFavorite(f)}>❌</button>
-            </li>
-          ))}
-        </ul>
+    <>
+      <div className="notif-icon" onClick={() => setIsOpen(!isOpen)}>
+        ⭐
+        {favorites.length > 0 && <span className="notif-count">{favorites.length}</span>}
+      </div>
+
+      {isOpen && (
+        <div className="notif-panel">
+          {favorites.length === 0 ? <p>No hay favoritas todavía.</p> : (
+            favorites.map(f => (
+              <div className="notification favorite-item" key={f.id}>
+                <strong>Frase:</strong> {f.text} <br />
+                <strong>Autor:</strong> {f.author} <br />
+                <strong>Categoría:</strong> {f.category} <br />
+                <button onClick={() => marcFavorite(f)}>❌</button>
+              </div>
+            ))
+          )}
+        </div>
       )}
-    </aside>
+    </>
   );
 }

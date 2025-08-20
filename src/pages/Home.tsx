@@ -1,22 +1,25 @@
 import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-
-const objects = [
-    { 
-        id: 1,
-        phrase: "The only limit to our realization of tomorrow is our doubts of today.",
-        author: "Franklin D. Roosevelt" 
-    },
-    { 
-        id: 2,
-        phrase: "In the middle of every difficulty lies opportunity.",
-        author: "Albert Einstein"
-    }
-];   
+import PhraseJSON from "../../public/phrase.json";   
+import FavoriteList from '../components/FavoriteList';
+import type { Phrase as PhraseType } from "../types/Phrase";
 
 
 const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [phrases, setPhrases] = useState<any[]>([]);
+
+    // Cargar frases al iniciar
+    useEffect(() => {
+        setLoading(true);
+        fetch('/phrase.json')
+            .then(res => res.json())
+            .then(data => {
+                setPhrases(data);
+                setLoading(false);
+            });
+    }, []);
 
     const handleNextPhrase = () => {
         setLoading(true);
@@ -29,6 +32,23 @@ const Home = () => {
 
     const currentPhrase = PhraseJSON[currentIndex];
 
+    // Estado de favoritos
+    const [favorites, setFavorites] = useState<PhraseType[]>(() => {
+        const stored = localStorage.getItem("favorites");
+        return stored ? JSON.parse(stored) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    }, [favorites]);
+
+    const toggleFavorite = (phrase: PhraseType) => {
+        if (favorites.find(f => f.id === phrase.id)) {
+            setFavorites(prev => prev.filter(f => f.id !== phrase.id));
+        } else {
+            setFavorites(prev => [...prev, phrase]);
+        }
+    };
     return (
         <>
             <div className="home">
@@ -36,12 +56,23 @@ const Home = () => {
                 <p>This is the main content of the home page.</p>
             </div>
 
-            <Phrase 
-                phrase={currentPhrase.phrase} 
-                author={currentPhrase.author} 
-                id={currentPhrase.id}
-                onNextPhrase={handleNextPhrase}
+            
+            {loading || !currentPhrase ? (
+                <div className="loading-container">
+                    <p>Cargando...</p>
+                </div>
+            ) : (
+                <Phrase 
+                    phrase={currentPhrase.text} 
+                    author={currentPhrase.author} 
+                    id={currentPhrase.id}
+                    onNextPhrase={handleNextPhrase}
+                    onFavoritePhrase={() => toggleFavorite(currentPhrase)} // agregamos favoritos
                 /> 
+
+            )} 
+            <FavoriteList favorites={favorites} marcFavorite={toggleFavorite} />
+
         </>
     );
 }

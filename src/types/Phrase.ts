@@ -1,6 +1,7 @@
 
 export interface Phrase {
-  id: number;
-  phrase: string;
-  author: string;
+    id: number;
+    text: string;
+    author: string;
+    category: string;
 }
