@@ -1,7 +1,5 @@
 import Phrase from '../components/Phrase';
-
-
-
+import './App.css';
 
 const Home = () => {   
     return (

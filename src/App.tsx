@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import './App.css'
+import './stylesPages/Home.css'
 import QuoteDisplay from './components/Quote'
 import Categories from './components/Categories'
 
