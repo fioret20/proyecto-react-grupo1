@@ -1,28 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-
-const objects = [
-    { 
-        id: 1,
-        phrase: "The only limit to our realization of tomorrow is our doubts of today.",
-        author: "Franklin D. Roosevelt" 
-    },
-    { 
-        id: 2,
-        phrase: "In the middle of every difficulty lies opportunity.",
-        author: "Albert Einstein"
-    }
-];   
+import PhraseJSON from "../../public/phrase.json";   
 
 
 const Home = () => {   
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [phrases, setPhrases] = useState<any[]>([]);
+
+    // Cargar frases al iniciar
+    useEffect(() => {
+        setLoading(true);
+        fetch('/phrase.json')
+            .then(res => res.json())
+            .then(data => {
+                setPhrases(data);
+                setLoading(false);
+            });
+    }, []);
 
     const handleNextPhrase = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % objects.length);
+        setLoading(true);
+        // Simula consulta, pero aquí solo cambia el índice
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+            setLoading(false);
+        }, 800); // Simula el tiempo de consulta
     };
 
-    const currentPhrase = objects[currentIndex];
+    const currentPhrase = PhraseJSON[currentIndex];
 
     return (
         <>
@@ -31,12 +37,18 @@ const Home = () => {
             <p>This is the main content of the home page.</p>
             </div>
 
-            <Phrase 
-                phrase={currentPhrase.phrase} 
-                author={currentPhrase.author} 
-                id={currentPhrase.id}
-                onNextPhrase={handleNextPhrase}
+            {loading || !currentPhrase ? (
+                <div className="loading-container">
+                    <p>Cargando...</p>
+                </div>
+            ) : (
+                <Phrase 
+                    phrase={currentPhrase.text} 
+                    author={currentPhrase.author} 
+                    id={currentPhrase.id}
+                    onNextPhrase={handleNextPhrase}
                 /> 
+            )}
         </>
     );
     }
