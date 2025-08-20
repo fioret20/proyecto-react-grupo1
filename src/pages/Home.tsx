@@ -29,9 +29,9 @@ const Home = () => {
         ? quotes
         : quotes.filter((quote: { category: string }) => quote.category === currentCategory);
 
-    useEffect(() => {
-        setCurrentIndex(0)
-    }, [currentCategory])
+    const handleCategoryChange = (category: string) => {
+        setCurrentCategory(category);
+    };
 
     const handleNextPhrase = () => {
         setLoading(true);
@@ -47,9 +47,10 @@ const Home = () => {
     return (
         <>
             <Title />
-
-            <Categories currentCategory={'Todas'} onCategoryChange={function (category: string): void {
-            }} />
+            <Categories
+                currentCategory={currentCategory}
+                onCategoryChange={handleCategoryChange}
+            />
 
             {loading || !currentPhrase ? (
                 <LoadingPhrase />
