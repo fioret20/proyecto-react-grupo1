@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-import PhraseJSON from "../../public/phrase.json"; 
-import LoadingPhrase from '../components/LoadingPhrase';  
+import PhraseJSON from "../../public/phrase.json";
+import LoadingPhrase from '../components/LoadingPhrase';
+import Title from '../components/Title';
+import Categories from '../components/Categories';
 
 
-const Home = () => {   
+const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [phrases, setPhrases] = useState<any[]>([]);
@@ -31,22 +33,22 @@ const Home = () => {
 
     return (
         <>
-            <div className="home">
-            <h1>Welcome to the Home Page</h1>
-            <p>This is the main content of the home page.</p>
-            </div>
+            <Title />
+
+            <Categories currentCategory={'Todas'} onCategoryChange={function (category: string): void {
+            }} />
 
             {loading || !currentPhrase ? (
                 <LoadingPhrase />
             ) : (
-                <Phrase 
-                    phrase={currentPhrase.text} 
-                    author={currentPhrase.author} 
+                <Phrase
+                    phrase={currentPhrase.text}
+                    author={currentPhrase.author}
                     id={currentPhrase.id}
                     onNextPhrase={handleNextPhrase}
-                /> 
+                />
             )}
         </>
     );
-    }
+}
 export default Home;
