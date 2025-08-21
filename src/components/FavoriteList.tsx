@@ -1,7 +1,6 @@
 import { useState } from "react";
 import type { Phrase } from "../types/Phrase";
 import './stylesComponents/FavoriteList.css';
-import Counter from "./Counter";
 
 interface FavoriteListProps {
   favorites: Phrase[];
