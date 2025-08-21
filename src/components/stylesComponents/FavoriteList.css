@@ -5,8 +5,8 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #3b82f6;
-    color: white;
+    background: oklch(0.6231 0.188 259.81);
+    color: oklch(1 0 0);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     font-size: 28px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+    box-shadow: 0 2px 8px oklch(0 0 0 / 15%);
     z-index: 100;
 }
 
@@ -22,8 +22,8 @@
     position: absolute;
     top: -5px;
     right: -5px;
-    background-color: #ef4444;
-    color: white;
+    background-color: oklch(0.6368 0.2078 25.33);
+    color: oklch(1 0 0);
     font-weight: bold;
     border-radius: 50%;
     padding: 4px 7px;
@@ -37,24 +37,24 @@
     right: 20px;
     width: 300px;
     max-height: 400px;
-    background-color: #2d3748;
-    box-shadow: 0 2px 12px rgb(0 0 0 / 0.2);
+    background-color: oklch(0.3351 0.0331 260.91);
+    box-shadow: 0 2px 12px oklch(0 0 0 / 20%);
     border-radius: 20px;
     padding: 12px;
     overflow-y: auto;
     z-index: 99;
-    color:#ffffff;
+    color:oklch(1 0 0);
 }
 
 .favorite-item {
     margin-bottom: 8px;
     padding: 10px;
     border-radius: 6px;
-    background-color:#4a5568;;
+    background-color:oklch(0.4474 0.0343 261.32);
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     border-radius: 0.75rem;
-    color: #dee5f8;
+    color: oklch(0.9223 0.0269 269.66);
     font-style: italic;
     }
 
@@ -62,18 +62,18 @@
     margin-top: 2px;
     padding: 6px 12px;
     cursor: pointer;
-    background-color: #4299e1;;
+    background-color: oklch(0.6626 0.1358 246.81);;
     border: none;
     font-size: 14px;
     transition: background-color 0.3s ease;
     border-radius: 9999px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px oklch(0 0 0 / 10%), 0 2px 4px -1px oklch(0 0 0 / 6%);
     margin-left:240px;
     margin-bottom:10px;
 }
 
 .favorite-item button:hover {
-    background-color: #3182ce;
+    background-color: oklch(0.5946 0.1398 250.3);
 }
 
 .textFavorite {
@@ -82,13 +82,13 @@
 
 .authorFavorite {
     font-size: 0.9rem;
-    color: #a0aec0;
+    color: oklch(0.7457 0.0304 254.72);
     margin-bottom: 8px;
 }
 
 .categoryFavorite {
     border-radius: 3rem;
-    background-color: #6797be;
+    background-color: oklch(0.6574 0.0781 243.87);
     width: 5rem;
     font-size: 15px;
     margin-bottom: 3px;

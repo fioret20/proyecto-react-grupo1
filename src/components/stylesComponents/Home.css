@@ -7,8 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #1a202c;
-    color: #e2e8f0;
+    background-color: oklch(0.2433 0.0247 263.95);
+    color: oklch(0.9288 0.0126 255.51);
     transition: background-color 0.3s ease;
      overflow: hidden;
 }
@@ -16,9 +16,9 @@ body {
 .app-container {
     width: 100%;
     max-width: 640px;
-    background-color: #2d3748;
+    background-color: oklch(0.3351 0.0331 260.91);
     border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px oklch(0 0 0 / 10%), 0 4px 6px -2px oklch(0 0 0 / 5%);
     padding: 2rem;
     text-align: center;
 }
@@ -27,14 +27,14 @@ body {
 .title {
     font-size: 3rem;
     font-weight: 800;
-    color: #63b3ed;
+    color: oklch(0.7392 0.1154 242.05);
     line-height: 1.25;
     margin-bottom: 0.5rem;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: #a0aec0;
+    color: oklch(0.7457 0.0304 254.72);
     margin-top: 0;
 }
 
@@ -62,17 +62,17 @@ body {
 }
 
 .category-button.active {
-    background-color: #3182ce;
-    color: #fff;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-color: oklch(0.5946 0.1398 250.3);
+    color: oklch(1 0 0);
+    box-shadow: 0 4px 6px -1px oklch(0 0 0 / 10%), 0 2px 4px -1px oklch(0 0 0 / 6%);
 }
 
 .category-button:not(.active) {
-    background-color: #4a5568;
-    color: #cbd5e0;
+    background-color: oklch(0.4474 0.0343 261.32);
+    color: oklch(0.8687 0.0187 250.61);
 
     .category-button:not(.active):hover {
-        background-color: #4a5568;
+        background-color: oklch(0.4474 0.0343 261.32);
     }
 }
 
@@ -82,9 +82,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #4a5568;
+    background-color: oklch(0.4474 0.0343 261.32);
     border-radius: 0.75rem;
-    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 2px 4px 0 oklch(0 0 0 / 6%);
 }
 
 .habit-quote {
@@ -105,10 +105,10 @@ body {
 
 .nav-button {
     padding: 0.7rem 1.3rem;
-    background-color: #4299e1;
+    background-color: oklch(0.6626 0.1358 246.81);
     color: #fff;
     border-radius: 9999px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px oklch(0 0 0 / 10%), 0 2px 4px -1px oklch(0 0 0 / 6%);
     transition: all 0.2s ease;
     border: none;
     cursor: pointer;
@@ -116,7 +116,7 @@ body {
 }
 
 .nav-button:hover {
-    background-color: #3182ce;
+    background-color: oklch(0.5946 0.1398 250.3);
     transform: scale(1.05);
     font-weight: bold;
 }

@@ -1,18 +1,18 @@
 .phrase-container {
     width: 40rem;
     overflow: hidden;
-    background-color: #384152;
-    color: white;
+    background-color: oklch(0.3742 0.0316 263.03);
+    color: oklch(1 0 0);
     border-radius: 10px;
     padding: 20px;
     font-size: 16px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(224, 224, 224, 0.1);
+    box-shadow: 0 4px 6px oklch(0.9067 0 0 / 10%);
     transition: background-color 0.3s ease;
 }
 
 .phrase-container:hover {
-    background-color: rgb(61, 61, 61);
+    background-color: oklch(0.36 0 0);
 }
 
 .phrase {
@@ -25,7 +25,7 @@
 }
 
 .author {
-    color: #a1a9c0;
+    color: oklch(0.736 0.0344 270.32);
 }
 
 .phrase-controls {
@@ -41,8 +41,8 @@
 .button-phrase {
     display: flex;
     margin: 5px;
-    background-color: #3585f6;
-    color: #ffffff;
+    background-color: oklch(0.6275 0.1862 257.89);
+    color: oklch(1 0 0);
     align-items: center;
 }
 
