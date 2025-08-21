@@ -10,6 +10,7 @@ body {
     background-color: #1a202c;
     color: #e2e8f0;
     transition: background-color 0.3s ease;
+     overflow: hidden;
 }
 
 .app-container {
@@ -121,10 +122,10 @@ body {
 }
 
 /* Media queries */
-@media (min-width: 640px) {
+@media (min-width: 320px) {
     .app-container {
-        width: 90%;       /* ocupa el 90% del viewport */
-        margin: auto;     /* siempre centrado */
+        width: 90%;
+        margin: auto;     
     }
 
     .title {
