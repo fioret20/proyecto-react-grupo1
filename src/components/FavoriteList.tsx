@@ -6,21 +6,26 @@ import Counter from "./Counter";
 interface FavoriteListProps {
   favorites: Phrase[];
   marcFavorite: (phrase: Phrase) => void;
+  maxFavorites: number;
 }
 
-export default function FavoriteList({ favorites, marcFavorite }: FavoriteListProps) {
+export default function FavoriteList({ favorites, marcFavorite, maxFavorites }: FavoriteListProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const limitReached = favorites.length >= maxFavorites;
+
   return (
     <>
-    <Counter count={favorites.length}  />
-      <div className="notif-icon" onClick={() => setIsOpen(!isOpen)}>
-        ⭐
-        {favorites.length > 0 && <span className="notif-count">{favorites.length}</span>}
+      <div
+        className={`notif-icon ${limitReached ? 'limit' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >        ⭐
+        <span className="notif-count">{favorites.length}/{maxFavorites}</span>
       </div>
-    
+
 
       {isOpen && (
-        <div className="notif-panel">
+        <div className="notif-panel ">
           {favorites.length === 0 ? <p>No hay favoritas todavía.</p> : (
             favorites.map(f => (
               <div className="notification favorite-item" key={f.id}>

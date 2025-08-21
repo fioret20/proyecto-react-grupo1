@@ -56,11 +56,15 @@ const Home = () => {
         localStorage.setItem("favorites", JSON.stringify(favorites));
     }, [favorites]);
 
+    const maxFavorites = 5;
+
     const toggleFavorite = (phrase: PhraseType) => {
         if (favorites.find(f => f.id === phrase.id)) {
             setFavorites(prev => prev.filter(f => f.id !== phrase.id));
         } else {
-            setFavorites(prev => [...prev, phrase]);
+            if (favorites.length < maxFavorites) {
+                setFavorites(prev => [...prev, phrase]);
+            }
         }
     };
 
@@ -85,10 +89,13 @@ const Home = () => {
                         onNextPhrase={handleNextPhrase}
 
                         onFavoritePhrase={() => toggleFavorite(currentPhrase)} // agregamos favoritos
+                            isFavorite={favorites.some(f => f.id === currentPhrase.id)}
+
                     />
 
                 )}
-                <FavoriteList favorites={favorites} marcFavorite={toggleFavorite} />
+                <FavoriteList favorites={favorites} marcFavorite={toggleFavorite} maxFavorites={maxFavorites} 
+                />
             </div>
         </>
     );

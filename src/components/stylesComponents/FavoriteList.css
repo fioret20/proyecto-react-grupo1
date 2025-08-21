@@ -17,7 +17,9 @@
     box-shadow: 0 2px 8px oklch(0 0 0 / 15%);
     z-index: 100;
 }
-
+.notif-icon.limit {
+    background: rgb(116, 116, 128); /* cambia a rojo cuando se alcanza el límite */
+}
 .notif-count {
     position: absolute;
     top: -5px;
@@ -27,7 +29,8 @@
     font-weight: bold;
     border-radius: 50%;
     padding: 4px 7px;
-    font-size: 14px;
+    font-size: 12px;
+    
 }
 
 /* Panel desplegable */
