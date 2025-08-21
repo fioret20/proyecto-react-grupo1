@@ -125,7 +125,10 @@ body {
 @media (min-width: 320px) {
     .app-container {
         width: 90%;
-        margin: auto;     
+        margin: auto;
+        padding: 1rem;
+        margin-top: 3rem;
+        border-radius: 1rem;     
     }
 
     .title {
