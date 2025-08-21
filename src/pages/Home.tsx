@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Phrase from '../components/Phrase';
-import PhraseJSON from "../../public/phrase.json";
 import FavoriteList from '../components/FavoriteList';
 import type { Phrase as PhraseType } from "../types/Phrase";
 import LoadingPhrase from '../components/LoadingPhrase';
@@ -25,7 +24,7 @@ const Home = () => {
 
     const [currentCategory, setCurrentCategory] = useState<string>('Todas');
 
-    const quotes = PhraseJSON;
+    const quotes = phrases;
 
     const filteredQuotes = currentCategory === 'Todas'
         ? quotes
@@ -36,11 +35,7 @@ const Home = () => {
     };
 
     const handleNextPhrase = () => {
-        setLoading(true);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredQuotes.length);
-            setLoading(false);
-        }, 500); // Simula el tiempo de consulta
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredQuotes.length);
     };
 
     const currentPhrase = filteredQuotes[currentIndex];
@@ -73,7 +68,6 @@ const Home = () => {
             <div className='app-container'>
                 <Title />
                 <Categories
-                    currentCategory={currentCategory}
                     onCategoryChange={handleCategoryChange}
                 />
 
