@@ -89,7 +89,6 @@
 .categoryFavorite {
     border-radius: 3rem;
     background-color: oklch(0.6574 0.0781 243.87);
-    width: 5rem;
     font-size: 15px;
     margin-bottom: 3px;
     margin-top:1px;

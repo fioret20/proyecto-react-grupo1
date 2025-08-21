@@ -1,11 +1,10 @@
 import React from 'react';
 
 interface CategoriesProps {
-    currentCategory: string;
     onCategoryChange: (category: string) => void;
 }
 
-const Categories: React.FC<CategoriesProps> = ({ currentCategory, onCategoryChange }) => {
+const Categories: React.FC<CategoriesProps> = ({ onCategoryChange }) => {
     const categories = ['Todas', 'Estudio', 'Trabajo', 'Personal', 'Productividad'];
 
     return (

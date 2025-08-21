@@ -7,7 +7,7 @@ interface CounterProps {
 export default function Counter({ count }: CounterProps) {
   return (
     <div className="quotes-counter">
-      Frases: {count}
+      Mis frases favoritas: {count}
     </div>
   );
 }
