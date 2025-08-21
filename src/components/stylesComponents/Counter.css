@@ -1,0 +1,15 @@
+.quotes-counter {
+  background: #3b82f6;
+  color: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1.5px solid rgb(49, 46, 46);
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+
+  position: absolute;
+  top: 20px; 
+  left: 20px;  
+}

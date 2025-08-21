@@ -1,7 +1,7 @@
-// FavoriteList.tsx
 import { useState } from "react";
 import type { Phrase } from "../types/Phrase";
 import './stylesComponents/FavoriteList.css';
+import Counter from "./Counter";
 
 interface FavoriteListProps {
   favorites: Phrase[];
@@ -10,13 +10,14 @@ interface FavoriteListProps {
 
 export default function FavoriteList({ favorites, marcFavorite }: FavoriteListProps) {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
+    <Counter count={favorites.length}  />
       <div className="notif-icon" onClick={() => setIsOpen(!isOpen)}>
         ⭐
         {favorites.length > 0 && <span className="notif-count">{favorites.length}</span>}
       </div>
+    
 
       {isOpen && (
         <div className="notif-panel">
